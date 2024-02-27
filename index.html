@@ -61,6 +61,14 @@
         const result = await response.json();
         document.getElementById("primeCheckResult").innerText = result;
     }
+
+    async function cipher() {
+        const numberToTest = document.getElementById("textToCipher");
+        let plainText = textToCipher.value;
+        const response = await fetch("???" + plainText);
+        const result = await response.json();
+        document.getElementById("cipher").innerText = result;
+    }
 </script>
 
 <body>
@@ -84,6 +92,15 @@
                 <input id="numberToTest" />
                 <button onclick="isPrime()">Check</button>
                 <label id="primeCheckResult"></label>
+            </section>
+        </div>
+        <div class="column">
+            <section>
+                <h2>Caesar Cipher</h2>
+                <label>Text:</label>
+                <input id="textToCipher" />
+                <button onclick="cipher()">Cipher</button>
+                <label id="cipher"></label>
             </section>
         </div>
     </div>
