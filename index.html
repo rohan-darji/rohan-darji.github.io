@@ -65,7 +65,7 @@
     async function cipher() {
         const numberToTest = document.getElementById("textToCipher");
         let plainText = textToCipher.value;
-        const response = await fetch("https://ciphers-service-rohan-darji.onrender.com" + plainText);
+        const response = await fetch("https://ciphers-service-rohan-darji.onrender.com/ciphers/" + plainText + "/3");
         const result = await response.json();
         document.getElementById("cipher").innerText = result;
     }
