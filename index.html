@@ -67,7 +67,6 @@
         let plainText = textToCipher.value;
         const response = await fetch("https://ciphers-service-rohan-darji.onrender.com" + "/ciphers/caesar/" + plainText + "/3");
         const result = await response.json();
-        console.log(result);
         document.getElementById("cipher").innerText = result.cipher;
     }
 </script>
