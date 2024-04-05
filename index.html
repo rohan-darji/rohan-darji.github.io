@@ -28,7 +28,7 @@
     async function add() {
         const x = parseInt(document.getElementById("quantity1").value)
         const y = parseInt(document.getElementById("quantity2").value)
-        const response = await fetch("https://arithmetic-service-rohan-darji.onrender.com/add/" + x + "/" + y)
+        const response = await fetch(`${hosts.arithmetic_service}/add${x}/${y}`)
         const sum = await response.json()
         document.getElementById("ans").innerHTML = sum
     }
@@ -36,7 +36,7 @@
     async function sub() {
         const x = parseInt(document.getElementById("quantity1").value)
         const y = parseInt(document.getElementById("quantity2").value)
-        const response = await fetch("https://arithmetic-service-rohan-darji.onrender.com/sub/" + x + "/" + y)
+        const response = await fetch(`${hosts.arithmetic_service}/sub${x}/${y}`)
         const sub = await response.json()
         document.getElementById("ans").innerHTML = sub
     }
@@ -44,7 +44,7 @@
     async function mul() {
         const x = parseInt(document.getElementById("quantity1").value)
         const y = parseInt(document.getElementById("quantity2").value)
-        const response = await fetch("https://arithmetic-service-rohan-darji.onrender.com/mul/" + x + "/" + y)
+        const response = await fetch(`${hosts.arithmetic_service}/mul${x}/${y}`)
         const multiply = await response.json()
         document.getElementById("ans").innerHTML = multiply
     }
@@ -52,7 +52,7 @@
     async function div() {
         const x = parseInt(document.getElementById("quantity1").value)
         const y = parseInt(document.getElementById("quantity2").value)
-        const response = await fetch("https://arithmetic-service-rohan-darji.onrender.com/div/" + x + "/" + y)
+        const response = await fetch(`${hosts.arithmetic_service}/div${x}/${y}`)
         const divide = await response.json()
         document.getElementById("ans").innerHTML = divide
     }
@@ -61,7 +61,7 @@
         const numberToTest = document.getElementById("numberToTest");
         let n = numberToTest.value;
         const headers = { 'Authorization':`Bearer $(configuration.token)`};
-        const response = await fetch(`${hosts.prime_service}/primes/$(n)`, {headers});
+        const response = await fetch(`${hosts.primes_service}/primes/$(n)`, {headers});
         // const response = await fetch("https://prime-service-rdarji.onrender.com/primes/" + n);
         const result = await response.json();
         document.getElementById("primeCheckResult").innerText = result;
@@ -70,7 +70,7 @@
     async function cipher() {
         const numberToTest = document.getElementById("textToCipher");
         let plainText = textToCipher.value;
-        const response = await fetch("https://ciphers-service-rohan-darji.onrender.com" + "/ciphers/caesar/" + plainText + "/3");
+        const response = await fetch(`${hosts.ciphers_service}/ciphers/caesar/${plainText}/3`);
         const result = await response.json();
         document.getElementById("cipher").innerText = result.cipher;
     }
