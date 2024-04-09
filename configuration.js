@@ -52,6 +52,8 @@ async function login() {
             configuration.loggedIn = true;
             displayLogin();
 
+        } else if(response.status == 401) {
+            alert("Incorrect username or password. Please try again."); 
         } else {
             console.log(`response status:${response.status}`);
             configuration.loggedIn = false;
